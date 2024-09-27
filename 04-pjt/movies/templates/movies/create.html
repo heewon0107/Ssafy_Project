@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<hr>
+<h1>마동석 영화 생성</h1>
+<hr>
+<form method="POST" enctype='multipart/form-data'>
+  {% csrf_token %}
+  {{form.as_p}}
+  <input class="btn btn-outline-info" type="submit" value="CREATE">
+  <a class="btn btn-outline-dark" href="{% url "movies:index" %}" role="button">BACK</a>
+</form>
+{% load static %}
+<hr>
+<img src="{% static "엄지척.gif" %}" alt="">
+{% endblock content %}
+
